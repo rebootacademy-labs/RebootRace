@@ -85,7 +85,7 @@ Cars.prototype.checkCollisionRival = function () {
         rivalCar.posX + rivalCar.width > player.posX || 
         rivalCar.posY + rivalCar.height > player.posY &&
         rivalCar.posY + rivalCar.height < player.posX
-        
+        //Linea de blocking
 
         ){
             console.log("Colisión MTF")
