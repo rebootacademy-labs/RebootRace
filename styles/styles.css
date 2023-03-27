@@ -34,8 +34,7 @@ body{
     height: 700px;
     display: flex;
     position: relative;
-    align-items: center;
-    justify-content: center;
+    top: ;
 }
 .piano {
     background-color: rgb(255, 255, 255);
@@ -71,7 +70,6 @@ body{
     border-radius: 30px;
     background-color: yellow;
     position: absolute;
-    bottom:10px;
     left: 0px;
 }
 .rival {

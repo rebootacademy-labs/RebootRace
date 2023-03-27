@@ -1,5 +1,5 @@
-
 //Prototipo
+
 function Cars(vida,posX,posY,speedX,speedY,size){
     this.vida = vida
     this.posX = posX
@@ -37,15 +37,17 @@ var rivalCar  = new Cars(
     )
 
 //Recive un ObjPlayer con la nueva posX -> Injecta en DOM
-Player.prototype.newPosX = function (player){
+Player.prototype.newPos = function (player){
     var playerCar = document.querySelector('.player1');
-    playerCar.setAttribute('style', `transform: translateX(${player.posX}px)`)
+    playerCar.setAttribute('style', `left:${player.posX}px; top:${player.posY}px`)
+    console.log("P1-X: " + player.posX)
 }
 
 //Unir Eje X e eje y en 1
 Player.prototype.newPosY = function (player){
     var playerCarY = document.querySelector('.player1');
-    playerCarY.setAttribute('style', `transform: translateY(${player.posY}px)`)
+   // playerCarY.setAttribute('style', `top:${player.posY}px`)
+    
 }
 
 
@@ -58,6 +60,7 @@ Cars.prototype.newRival = function(){
     createRival.setAttribute('class','rival')
     screen.appendChild(createRival)
     //var interval  = Math.floor(Math.random()*10)
+    //Moivmiento Vertical del
     rivalIntervalID = setInterval(rivalCar.newPosY,50)
 }
 
@@ -71,7 +74,25 @@ Cars.prototype.newPosY = function (){
         clearInterval(rivalIntervalID)
         screen.removeChild(rivalDOM)
     }
-    rivalDOM.setAttribute('style', `transform: translateY(${rivalCar.posY}px)`)
+    rivalDOM.setAttribute('style', `left:(${rivalCar.posY}px)`)
+
 }
 
 rivalCar.newRival(rivalCar)
+
+// Checkcolision function
+Cars.prototype.checkCollision = function () {
+    if (player.posY + player.size + (player.size / 2) >= rivalCar.posY){
+    //console.log("Pos Check Collision" + rivalCar.posY, player.posY)
+    } else {
+
+    }
+        
+}
+
+
+
+export {
+    player,
+    rivalCar
+} 
